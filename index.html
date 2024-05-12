@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>看護師診療科診断</title>
+  <meta charset="utf-8">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="max-w-[1200px]">
+  <!-- ヘッダー -->
+  <header class="flex justify-center items-center h-32 mx-auto">
+    <h1 class="text-4xl text-center">あなたは何科の看護師にむいてる？<br>診断アプリ</h1>
+  </header>
+  <!-- メイン -->
+  <main>
+  <div class="pt-20">
+    <!-- ここから５つ質問を記述 -->
+    <!-- 質問1 -->
+    <div id="q_01" class="fit flex flex-col justify-center items-center">
+      <p class="text-3xl font-bold">質問1: あなたの性格は？　</p>
+      <ul>
+        <li
+          class="w-96 h-16 my-8 flex items-center justify-center text-2xl text-white text-center rounded-lg  bg-blue-500 hover:bg-blue-200 hover:text-black  cursor-pointer">
+          <a class="
+          btn" href="#q_02" data-value="a">穏やか</a>
+        </li>
+        <!-- 内科  -->
+        <li
+          class="w-96 h-16 my-8 flex items-center justify-center text-2xl text-white text-center rounded-lg bg-blue-500 hover:bg-blue-200 hover:text-black cursor-pointer">
+          <a class="btn" href="#q_02" data-value="b">社交的</a>
+        </li> <!-- 外科  -->
+        <li
+          class="w-96 h-16 my-8 flex items-center justify-center text-2xl text-white text-center rounded-lg bg-blue-500 hover:bg-blue-200 hover:text-black cursor-pointer">
+          <a class="
+          btn" href="#q_02" data-value="c">冷静</a>
+        </li> <!-- 救急  -->
+      </ul>
+    </div>
+
+    <!-- 質問2 -->
+    <div id="q_02" class=" flex flex-col justify-center items-center" style="display: none;">
+      <p class="text-3xl font-bold">質問2:　あなたは普段、相手との会話で</p>
+      <ul>
+        <li
+          class="w-96 h-16 my-8 flex items-center justify-center text-2xl text-white text-center rounded-lg bg-blue-500 hover:bg-blue-200 hover:text-black cursor-pointer">
+          <a class="btn" href="#q_03" data-value="a">語尾がソフト</a>
+        </li>
+        <li
+          class="w-96 h-16 my-8 flex items-center justify-center text-2xl text-white text-center rounded-lg bg-blue-500 hover:bg-blue-200 hover:text-black cursor-pointer">
+          <a class="btn" href="#q_03" data-value="b">間をとりながら話す</a>
+        </li>
+        <li
+          class="w-96 h-16 my-8 flex items-center justify-center text-2xl text-white text-center rounded-lg bg-blue-500 hover:bg-blue-200 hover:text-black cursor-pointer">
+          <a class="btn" href="#q_03" data-value="c">語尾がキッパリ</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- 質問3 -->
+    <div id="q_03" class=" flex flex-col justify-center items-center" style="display: none;">
+      <p class="text-3xl font-bold">質問3:　ストレスが溜まった時、あなたは</p>
+      <ul>
+        <li
+          class="w-96 h-16 my-8 flex items-center justify-center text-2xl text-white text-center rounded-lg bg-blue-500 hover:bg-blue-200 hover:text-black cursor-pointer">
+          <a class="btn" href="#q_04" data-value="a">問題解決に取り組む</a>
+        </li>
+        <li
+          class="w-96 h-16 my-8 flex items-center justify-center text-2xl text-white text-center rounded-lg bg-blue-500 hover:bg-blue-200 hover:text-black cursor-pointer">
+          <a class="btn" href="#q_04" data-value="b">趣味に没頭する</a>
+        </li>
+        <li
+          class="w-96 h-16 my-8 flex items-center justify-center text-2xl text-white text-center rounded-lg bg-blue-500 hover:bg-blue-200 hover:text-black cursor-pointer">
+          <a class="btn" href="#q_04" data-value="c">お酒で気晴らし</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- 質問4 -->
+    <div id="q_04" class=" flex flex-col justify-center items-center" style="display: none;">
+      <p class="text-3xl font-bold">質問4:　新しい状況や技術に対して、あなたは</p>
+      <ul>
+        <li
+          class="w-96 h-16 my-8 flex items-center justify-center text-2xl text-white text-center rounded-lg bg-blue-500 hover:bg-blue-200 hover:text-black cursor-pointer">
+          <a class="btn" href="#q_05" data-value="a">できれば避けたい</a>
+        </li>
+        <li
+          class="w-96 h-16 my-8 flex items-center justify-center text-2xl text-white text-center rounded-lg bg-blue-500 hover:bg-blue-200 hover:text-black cursor-pointer">
+          <a class="btn" href="#q_05" data-value="b">関心はあるが、様子を見る</a>
+        </li>
+        <li
+          class="w-96 h-16 my-8 flex items-center justify-center text-2xl text-white text-center rounded-lg bg-blue-500 hover:bg-blue-200 hover:text-black cursor-pointer">
+          <a class="btn" href="#q_05" data-value="c">積極的に学習しようとする</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- 質問5 -->
+    <div id="q_05" class=" flex flex-col justify-center items-center" style="display: none;">
+      <p class="text-3xl font-bold">質問5:　チームでのあなたの役割は</p>
+      <ul>
+        <li
+          class="w-96 h-16 my-8 flex items-center justify-center text-2xl text-white text-center rounded-lg bg-blue-500 hover:bg-blue-200 hover:text-black cursor-pointer">
+          <a class="btn end" data-value="a">チームプレーヤーとして協力する</a>
+        </li>
+        <li
+          class="w-96 h-16 my-8 flex items-center justify-center text-2xl text-white text-center rounded-lg bg-blue-500 hover:bg-blue-200 hover:text-black cursor-pointer">
+          <a class="btn end" data-value="b">リーダーシップを取る</a>
+        </li>
+        <li
+          class="w-96 h-16 my-8 flex items-center justify-center text-2xl text-white text-center rounded-lg bg-blue-500 hover:bg-blue-200 hover:text-black cursor-pointer">
+          <a class="btn end" data-value="c">自分の仕事に集中する</a>
+        </li>
+      </ul>
+    </div>
+
+
+
+    <!-- ここから以下回答 -->
+    <!-- 回答の答え1 -->
+    <div id="answer_01" class="result text-gray-600 body-font" style="display: none;">
+      <div class="container mx-auto flex px-5 py-5 items-center justify-center flex-col">
+        <h1 class="title-font sm:text-4xl text-3xl pb-20 font-medium text-gray-900">あなたにむいている診療科は</h1>
+        <img class="lg:w-2/6 md:w-3/6 w-5/6 mb-10 object-cover object-center rounded" alt="内科看護師"
+          src="img/result01.jpg">
+        <div class="text-center lg:w-2/3 w-full">
+          <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">内科</h1>
+          <h1 class="title-font sm:text-3xl text-2xl mb-4 font-medium text-gray-900">その人らしさに寄り添うエキスパート</h1>
+          <p class="mb-8 leading-relaxed">
+            内科では主に薬物治療の介助や日常生活援助、セルフコントロール支援を行います。入院期間が長く、高齢で複数の疾患を持つ患者さんが多いため、コミュニケーション能力やさまざまな疾患と症状の知識が求められます。<span class="text-rose-500">人とじっくり関わりたいあなたにおすすめです。</span>
+          </p>
+          <button
+            class="return w-56 h-14 m-4 bg-blue-500 text-white hover:bg-blue-200 hover:text-black rounded-full">もういちど</button>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <!-- 回答の答え2 -->
+    <div id="answer_02" class="result text-gray-600 body-font" style="display: none;">
+      <div class="container mx-auto flex px-5 py-5 items-center justify-center flex-col">
+        <h1 class="title-font sm:text-4xl text-3xl pb-20 font-medium text-gray-900">あなたにむいている診療科は</h1>
+        <img class="lg:w-2/6 md:w-3/6 w-5/6 mb-10 object-cover object-center rounded" alt="外科看護師"
+          src="img/result02.jpg">
+        <div class="text-center lg:w-2/3 w-full">
+          <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">外科</h1>
+          <h1 class="title-font sm:text-3xl text-2xl mb-4 font-medium text-gray-900">マルチタスクをこなすプロ</h1>
+          <p class="mb-8 leading-relaxed">
+            外科では、手術前後の看護、治療や処置の介助を行います。急性期の患者さんが多く、病態が急速に変化するため迅速に複数の業務をこなす能力や幅広い専門的知識と看護技術が求められます。<span class="text-rose-500">幅広い知識と経験を積みたいあなたにおすすめです。</span>
+          </p>
+          <button
+            class="return w-56 h-14 m-4 bg-blue-500 text-white hover:bg-blue-200 hover:text-black rounded-full">もういちど</button>
+        </div>
+      </div>
+    </div>
+
+
+
+    <!-- 回答の答え3 -->
+    <div id="answer_03" class="result text-gray-600 body-font" style="display: none;">
+      <div class="container mx-auto flex px-5 py-5 items-center justify-center flex-col">
+        <h1 class="title-font sm:text-4xl text-3xl pb-20 font-medium text-gray-900">あなたにむいている診療科は</h1>
+        <img class="lg:w-2/6 md:w-3/6 w-5/6 mb-10 object-cover object-center rounded" alt="救急科看護師"
+          src="img/result03.jpg">
+        <div class="text-center lg:w-2/3 w-full">
+          <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">救急診療科</h1>
+          <h1 class="title-font sm:text-3xl text-2xl mb-4 font-medium text-gray-900">医療の最前線で命を守る番人</h1>
+          <p class="mb-8 leading-relaxed">
+            救急診療科では事故の怪我や急な病気などの緊急性の高い患者さんへの看護を提供します。対象の患者さんは、すべての年齢とすべての疾患・外傷であるため、幅広い知識と高度な看護技術が求められます。<span class="text-rose-500">向上心が高いあなたにおすすめです。</span>
+          </p>
+          <button
+            class="return w-56 h-14 m-4 bg-blue-500 text-white hover:bg-blue-200 hover:text-black rounded-full">もういちど</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="./js/main.js"></script>
+</body>
+
+</html>
