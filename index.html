@@ -2,13 +2,25 @@
 <html>
 
 <head>
-  <title>看護師診療科診断</title>
+  <title>ナースのお仕事</title>
   <meta charset="utf-8">
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body class="max-w-[1200px] mx-auto">
-  <div>
+  <!-- ページロード後最初に表示される部分 -->
+  <div id="startPage"
+    class="flex flex-col justify-center items-center min-h-[45vh] h-screen bg-[url('img/bg03.jpg')]  bg-center bg-cover">
+    <h1 class="text-3xl text-slate-700 mb-28">もしあなたが看護師なら…</h1>
+    <h1 class="text-4xl font-bold text-orange-600 mb-20">診療科診断 for Nurse</h1>
+    <h3 class="text-2xl text-slate-700 mb-20">5つの質問に答えて
+      どの診療科がむいているか診断してみよう！</h3>
+    <button id="openBtn"
+      class="text-white text-4xl w-80 h-28 bg-orange-600 animate-pulse hover:bg-orange-200 hover:text-black rounded-full mb-20">診断START
+      </bt>
+  </div>
+  <!-- ボタンを押すとこっちが表示 -->
+  <div id="mainPage" class="hidden">
     <!-- ヘッダー -->
     <header class="text-gray-600 body-font">
       <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
@@ -16,7 +28,8 @@
           <img src="img/mv.jpg" alt="">
         </a>
         <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
-          <a class="mr-5 hover:text-gray-900" href="index.html">ホーム</a>
+          <a id="home" class="mr-5 hover:text-gray-900" href="#mainPage">ホーム</a>
+          <!-- mainPageに飛ぶが回答途中に押すと質問が重複して表示される -->
           <a class="mr-5 hover:text-gray-900" href="gallery.html">図鑑</a>
         </nav>
         <button id="linkBtn"
@@ -28,111 +41,115 @@
         </button>
       </div>
     </header>
-    <div class="bg-pink-50 flex justify-center items-center h-32 mx-auto">
-      <h1 class="text-4xl text-center">あなたは何科の看護師にむいてる？<br>診断アプリ</h1>
-    </div>
     <!-- メイン -->
     <main class="min-h-[45vh] bg-[url('img/bg.jpg')]  bg-center bg-cover">
       <div class="pt-20">
         <!-- ここから５つ質問を記述 -->
         <!-- 質問1 -->
         <div id="q_01" class="fit flex flex-col justify-center items-center">
-          <p class="text-3xl font-bold">質問1: あなたの性格は？　</p>
+          <p class="text-3xl font-bold text-center w-60 bg-orange-300 rounded-full mb-8">Q 1</p>
+          <p class="text-3xl font-bold">あなたの性格は？</p>
           <ul>
             <!-- aの答えは内科  -->
             <li
-              class="w-96 h-16 my-8 flex items-center justify-center text-2xl text-white text-center rounded-lg  bg-blue-500 hover:bg-blue-200 hover:text-black  cursor-pointer">
+              class="w-96 h-16 my-8 flex items-center justify-center text-2xl text-white text-center rounded-lg  bg-blue-400 hover:bg-blue-200 hover:text-black  cursor-pointer">
               <a class="
           btn" href="#q_02" data-value="a">穏やか</a>
             </li>
             <!-- bの答えは外科  -->
             <li
-              class="w-96 h-16 my-8 flex items-center justify-center text-2xl text-white text-center rounded-lg bg-blue-500 hover:bg-blue-200 hover:text-black cursor-pointer">
+              class="w-96 h-16 my-8 flex items-center justify-center text-2xl text-white text-center rounded-lg bg-blue-400 hover:bg-blue-200 hover:text-black cursor-pointer">
               <a class="btn" href="#q_02" data-value="b">社交的</a>
             </li>
             <!-- cの答えは救急  -->
             <li
-              class="w-96 h-16 my-8 flex items-center justify-center text-2xl text-white text-center rounded-lg bg-blue-500 hover:bg-blue-200 hover:text-black cursor-pointer">
+              class="w-96 h-16 my-8 flex items-center justify-center text-2xl text-white text-center rounded-lg bg-blue-400 hover:bg-blue-200 hover:text-black cursor-pointer">
               <a class="
           btn" href="#q_02" data-value="c">冷静</a>
             </li>
           </ul>
         </div>
         <!-- 質問2 -->
-        <div id="q_02" class=" flex flex-col justify-center items-center" style="display: none;">
-          <p class="text-3xl font-bold">質問2:　あなたは普段、相手との会話で</p>
+        <!-- 本当はhiddenと書きたかったがそうすると要素が左寄せになってしまうので断念 以下同様 -->
+        <div id="q_02" class="flex flex-col justify-center items-center" style="display: none;">
+          <p class="text-3xl font-bold text-center w-60 bg-orange-300 rounded-full mb-8">Q 2</p>
+          <p class="text-3xl font-bold">あなたは普段、相手との会話で</p>
           <ul>
             <li
-              class="w-96 h-16 my-8 flex items-center justify-center text-2xl text-white text-center rounded-lg bg-blue-500 hover:bg-blue-200 hover:text-black cursor-pointer">
+              class="w-96 h-16 my-8 flex items-center justify-center text-2xl text-white text-center rounded-lg bg-blue-400 hover:bg-blue-200 hover:text-black cursor-pointer">
               <a class="btn" href="#q_03" data-value="a">語尾がソフト</a>
             </li>
             <li
-              class="w-96 h-16 my-8 flex items-center justify-center text-2xl text-white text-center rounded-lg bg-blue-500 hover:bg-blue-200 hover:text-black cursor-pointer">
+              class="w-96 h-16 my-8 flex items-center justify-center text-2xl text-white text-center rounded-lg bg-blue-400 hover:bg-blue-200 hover:text-black cursor-pointer">
               <a class="btn" href="#q_03" data-value="b">間をとりながら話す</a>
             </li>
             <li
-              class="w-96 h-16 my-8 flex items-center justify-center text-2xl text-white text-center rounded-lg bg-blue-500 hover:bg-blue-200 hover:text-black cursor-pointer">
+              class="w-96 h-16 my-8 flex items-center justify-center text-2xl text-white text-center rounded-lg bg-blue-400 hover:bg-blue-200 hover:text-black cursor-pointer">
               <a class="btn" href="#q_03" data-value="c">語尾がキッパリ</a>
             </li>
           </ul>
         </div>
         <!-- 質問3 -->
         <div id="q_03" class=" flex flex-col justify-center items-center" style="display: none;">
-          <p class="text-3xl font-bold">質問3:　ストレスが溜まった時、あなたは</p>
+          <p class="text-3xl font-bold text-center w-60 bg-orange-300 rounded-full mb-8">Q 3</p>
+          <p class="text-3xl font-bold">ストレスが溜まった時、あなたは</p>
           <ul>
             <li
-              class="w-96 h-16 my-8 flex items-center justify-center text-2xl text-white text-center rounded-lg bg-blue-500 hover:bg-blue-200 hover:text-black cursor-pointer">
+              class="w-96 h-16 my-8 flex items-center justify-center text-2xl text-white text-center rounded-lg bg-blue-400 hover:bg-blue-200 hover:text-black cursor-pointer">
               <a class="btn" href="#q_04" data-value="a">問題解決に取り組む</a>
             </li>
             <li
-              class="w-96 h-16 my-8 flex items-center justify-center text-2xl text-white text-center rounded-lg bg-blue-500 hover:bg-blue-200 hover:text-black cursor-pointer">
+              class="w-96 h-16 my-8 flex items-center justify-center text-2xl text-white text-center rounded-lg bg-blue-400 hover:bg-blue-200 hover:text-black cursor-pointer">
               <a class="btn" href="#q_04" data-value="b">趣味に没頭する</a>
             </li>
             <li
-              class="w-96 h-16 my-8 flex items-center justify-center text-2xl text-white text-center rounded-lg bg-blue-500 hover:bg-blue-200 hover:text-black cursor-pointer">
+              class="w-96 h-16 my-8 flex items-center justify-center text-2xl text-white text-center rounded-lg bg-blue-400 hover:bg-blue-200 hover:text-black cursor-pointer">
               <a class="btn" href="#q_04" data-value="c">お酒で気晴らし</a>
             </li>
           </ul>
         </div>
         <!-- 質問4 -->
         <div id="q_04" class=" flex flex-col justify-center items-center" style="display: none;">
-          <p class="text-3xl font-bold">質問4:　新しい状況や技術に対して、あなたは</p>
+          <p class="text-3xl font-bold text-center w-60 bg-orange-300 rounded-full mb-8">Q 4</p>
+          <p class="text-3xl font-bold">新しい状況や技術に対して、あなたは</p>
           <ul>
             <li
-              class="w-96 h-16 my-8 flex items-center justify-center text-2xl text-white text-center rounded-lg bg-blue-500 hover:bg-blue-200 hover:text-black cursor-pointer">
+              class="w-96 h-16 my-8 flex items-center justify-center text-2xl text-white text-center rounded-lg bg-blue-400 hover:bg-blue-200 hover:text-black cursor-pointer">
               <a class="btn" href="#q_05" data-value="a">できれば避けたい</a>
             </li>
             <li
-              class="w-96 h-16 my-8 flex items-center justify-center text-2xl text-white text-center rounded-lg bg-blue-500 hover:bg-blue-200 hover:text-black cursor-pointer">
+              class="w-96 h-16 my-8 flex items-center justify-center text-2xl text-white text-center rounded-lg bg-blue-400 hover:bg-blue-200 hover:text-black cursor-pointer">
               <a class="btn" href="#q_05" data-value="b">関心はあるが、様子を見る</a>
             </li>
             <li
-              class="w-96 h-16 my-8 flex items-center justify-center text-2xl text-white text-center rounded-lg bg-blue-500 hover:bg-blue-200 hover:text-black cursor-pointer">
+              class="w-96 h-16 my-8 flex items-center justify-center text-2xl text-white text-center rounded-lg bg-blue-400 hover:bg-blue-200 hover:text-black cursor-pointer">
               <a class="btn" href="#q_05" data-value="c">積極的に学習しようとする</a>
             </li>
           </ul>
         </div>
         <!-- 質問5 -->
         <div id="q_05" class=" flex flex-col justify-center items-center" style="display: none;">
-          <p class="text-3xl font-bold">質問5:　チームでのあなたの役割は</p>
+          <p class="text-3xl font-bold text-center w-60 bg-orange-300 rounded-full mb-8">Q 5</p>
+          <p class="text-3xl font-bold">チームでのあなたの役割は</p>
           <ul>
             <li
-              class="w-96 h-16 my-8 flex items-center justify-center text-2xl text-white text-center rounded-lg bg-blue-500 hover:bg-blue-200 hover:text-black cursor-pointer">
+              class="w-96 h-16 my-8 flex items-center justify-center text-2xl text-white text-center rounded-lg bg-blue-400 hover:bg-blue-200 hover:text-black cursor-pointer">
               <a class="btn end" data-value="a">チームプレーヤーとして協力する</a>
             </li>
             <li
-              class="w-96 h-16 my-8 flex items-center justify-center text-2xl text-white text-center rounded-lg bg-blue-500 hover:bg-blue-200 hover:text-black cursor-pointer">
+              class="w-96 h-16 my-8 flex items-center justify-center text-2xl text-white text-center rounded-lg bg-blue-400 hover:bg-blue-200 hover:text-black cursor-pointer">
               <a class="btn end" data-value="b">リーダーシップを取る</a>
             </li>
             <li
-              class="w-96 h-16 my-8 flex items-center justify-center text-2xl text-white text-center rounded-lg bg-blue-500 hover:bg-blue-200 hover:text-black cursor-pointer">
+              class="w-96 h-16 my-8 flex items-center justify-center text-2xl text-white text-center rounded-lg bg-blue-400 hover:bg-blue-200 hover:text-black cursor-pointer">
               <a class="btn end" data-value="c">自分の仕事に集中する</a>
             </li>
           </ul>
         </div>
         <!-- ここから以下回答 -->
-        <!-- 回答の答え1 -->
-        <div id="answer_01" class="result text-gray-600 body-font" style="display: none;">
+        <!-- 回答の答え1 aが1番多いと内科 -->
+        <!-- ここはhiddenでも中央配置 なぜ -->
+        <div id="answer_01" class="result text-gray-600 body-font hidden">
           <div class="container mx-auto flex px-5 py-5 items-center justify-center flex-col">
             <h1 class="title-font sm:text-4xl text-3xl pb-20 font-medium text-gray-900">あなたにむいている診療科は</h1>
             <img class="lg:w-2/6 md:w-3/6 w-5/6 mb-10 object-cover object-center rounded" alt="内科看護師"
@@ -145,12 +162,12 @@
                   class="text-rose-500">人とじっくり関わりたいあなたにおすすめです。</span>
               </p>
               <button
-                class="return w-56 h-14 m-4 bg-blue-500 text-white hover:bg-blue-200 hover:text-black rounded-full">もういちど</button>
+                class="return w-56 h-14 m-4 bg-blue-400 text-white hover:bg-blue-200 hover:text-black rounded-full">もういちど</button>
             </div>
           </div>
         </div>
-        <!-- 回答の答え2 -->
-        <div id="answer_02" class="result text-gray-600 body-font" style="display: none;">
+        <!-- 回答の答え2 bが1番多いと外科 -->
+        <div id="answer_02" class="result text-gray-600 body-font hidden">
           <div class="container mx-auto flex px-5 py-5 items-center justify-center flex-col">
             <h1 class="title-font sm:text-4xl text-3xl pb-20 font-medium text-gray-900">あなたにむいている診療科は</h1>
             <img class="lg:w-2/6 md:w-3/6 w-5/6 mb-10 object-cover object-center rounded" alt="外科看護師"
@@ -163,12 +180,12 @@
                   class="text-rose-500">幅広い知識と経験を積みたいあなたにおすすめです。</span>
               </p>
               <button
-                class="return w-56 h-14 m-4 bg-blue-500 text-white hover:bg-blue-200 hover:text-black rounded-full">もういちど</button>
+                class="return w-56 h-14 m-4 bg-blue-400 text-white hover:bg-blue-200 hover:text-black rounded-full">もういちど</button>
             </div>
           </div>
         </div>
-        <!-- 回答の答え3 -->
-        <div id="answer_03" class="result text-gray-600 body-font" style="display: none;">
+        <!-- 回答の答え3 cが1番多いと救急診療科 -->
+        <div id="answer_03" class="result text-gray-600 body-font hidden">
           <div class="container mx-auto flex px-5 py-5 items-center justify-center flex-col">
             <h1 class="title-font sm:text-4xl text-3xl pb-20 font-medium text-gray-900">あなたにむいている診療科は</h1>
             <img class="lg:w-2/6 md:w-3/6 w-5/6 mb-10 object-cover object-center rounded" alt="救急科看護師"
@@ -181,15 +198,15 @@
                   class="text-rose-500">向上心が高いあなたにおすすめです。</span>
               </p>
               <button
-                class="return w-56 h-14 m-4 bg-blue-500 text-white hover:bg-blue-200 hover:text-black rounded-full">もういちど</button>
+                class="return w-56 h-14 m-4 bg-blue-400 text-white hover:bg-blue-200 hover:text-black rounded-full">もういちど</button>
             </div>
           </div>
         </div>
       </div>
       <!-- モーダルコンテンツ -->
       <div id="modal"
-        class="inline-block p-5 overflow-hidden text-left align-bottom transition-all transform bg-white rounded-lg shadow-2xl lg:p-16 sm:my-8 sm:align-middle sm:max-w-xl sm:w-full"
-        style="display: none;">
+        class="inline-block p-5 overflow-hidden text-left align-bottom transition-all transform bg-white rounded-lg shadow-2xl lg:p-16 sm:my-8 sm:align-middle sm:max-w-xl sm:w-full hidden"
+        >
         <!-- モーダルの内容 -->
         <div id="modal-content">
           <div class="mt-3 text-left sm:mt-5">
@@ -197,55 +214,55 @@
               <p class="mb-8 text-2xl font-semibold leading-none tracking-tighter text-neutral-600">
                 他にもどんな診療科があるか<br><br>みてみませんか？</p>
               <p class="mt-1 text-lg text-gray-500"><a
-                  class="w-50 bg-pink-400 text-white hover:bg-pink-100 hover:text-black rounded"
-                  href="gallery.html">診療科別看護師図鑑をチェック</a></p>
+                  class="w-56 bg-pink-400 text-white hover:bg-pink-100 hover:text-black rounded"
+                  href="gallery.html">図鑑をみてみる</a></p>
             </div>
           </div>
         </div>
       </div>
+    </main>
+    <!-- フッター -->
+    <footer class="text-gray-600 body-font">
+      <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+        <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">© 2024
+          なっちゃん —
+          <a href="https://twitter.com/_723kb" class="text-gray-600 hover:text-gray-900 ml-1" rel="noopener noreferrer"
+            target="_blank">@＿723kb</a>
+        </p>
+        <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+          <a class="text-gray-500">
+            <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5"
+              viewBox="0 0 24 24">
+              <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+            </svg>
+          </a>
+          <a class="ml-3 text-gray-500">
+            <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5"
+              viewBox="0 0 24 24">
+              <path
+                d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z">
+              </path>
+            </svg>
+          </a>
+          <a class="ml-3 text-gray-500">
+            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              class="w-5 h-5" viewBox="0 0 24 24">
+              <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+            </svg>
+          </a>
+          <a class="ml-3 text-gray-500">
+            <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+              stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
+              <path stroke="none"
+                d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+              <circle cx="4" cy="4" r="2" stroke="none"></circle>
+            </svg>
+          </a>
+        </span>
+      </div>
+    </footer>
   </div>
-  </main>
-  <!-- フッター -->
-  <footer class="text-gray-600 body-font">
-    <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
-      <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">© 2024
-        なっちゃん —
-        <a href="https://twitter.com/_723kb" class="text-gray-600 hover:text-gray-900 ml-1" rel="noopener noreferrer"
-          target="_blank">@＿723kb</a>
-      </p>
-      <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
-        <a class="text-gray-500">
-          <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5"
-            viewBox="0 0 24 24">
-            <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
-          </svg>
-        </a>
-        <a class="ml-3 text-gray-500">
-          <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5"
-            viewBox="0 0 24 24">
-            <path
-              d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z">
-            </path>
-          </svg>
-        </a>
-        <a class="ml-3 text-gray-500">
-          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-            class="w-5 h-5" viewBox="0 0 24 24">
-            <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
-            <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
-          </svg>
-        </a>
-        <a class="ml-3 text-gray-500">
-          <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"
-            class="w-5 h-5" viewBox="0 0 24 24">
-            <path stroke="none"
-              d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
-            <circle cx="4" cy="4" r="2" stroke="none"></circle>
-          </svg>
-        </a>
-      </span>
-    </div>
-  </footer>
   <!-- 以下JavaScript読み込み -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script src="./js/main.js"></script>

@@ -16,7 +16,8 @@
           <img src="img/mv.jpg" alt="">
         </a>
         <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
-          <a class="mr-5 hover:text-gray-900" href="index.html">ホーム</a>
+          <a id="home" class="mr-5 hover:text-gray-900" href="index.html#mainPage">ホーム</a>
+          <!-- 最初のスタートぺーじなってしまう -->
           <a class="mr-5 hover:text-gray-900" href="gallery.html">図鑑</a>
         </nav>
         <button
@@ -37,84 +38,86 @@
     <main class="min-h-[45vh] bg-[url('img/bg02.jpg')]  bg-center bg-cover">
       <section class="text-gray-600 body-font">
         <div class="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
+          <h1 class="title-font sm:text-4xl text-3xl mb-8 font-medium text-gray-900">ナースのお仕事　スロットゲーム</h1>
+          <p class="text-center title-font sm:text-2xl text-xl mb-4 font-medium text-gray-900">絵柄が揃うと音声が流れます。<br>音量に注意してください。</p>
           <div class="container mx-auto p-8" style="width: 1200px;">
+            <!-- スロット部分 -->
             <table class="border-collapse border-4 border-black mx-auto mb-8">
-                <tr>
-                    <td class="w-48 h-48 border border-black text-center">
-                        <img id="left" src="./img/slot01.jpg" class="mx-auto" border="0">
-                    </td>
-                    <td class="w-48 h-48 border border-black text-center">
-                        <img id="center" src="./img/slot02.jpg" class="mx-auto" border="0">
-                    </td>
-                    <td class="w-48 h-48 border border-black text-center">
-                        <img id="right" src="./img/slot03.jpg" class="mx-auto" border="0">
-                    </td>
-                </tr>
+              <tr>
+                <td class="w-48 h-48 border border-black text-center">
+                  <img id="left" src="./img/slot01.jpg" class="mx-auto" border="0">
+                </td>
+                <td class="w-48 h-48 border border-black text-center">
+                  <img id="center" src="./img/slot02.jpg" class="mx-auto" border="0">
+                </td>
+                <td class="w-48 h-48 border border-black text-center">
+                  <img id="right" src="./img/slot03.jpg" class="mx-auto" border="0">
+                </td>
+              </tr>
             </table>
-      
+            <!-- 結果表示部分 -->
             <div id="slotResult" class="text-center text-4xl font-bold mb-8"></div>
-            <!-- YouTube動画を埋め込む場所 -->
-<div id="youtubeVideo2" style="display: none;">
-</div>
             <div class="flex justify-center">
-                <button id="startButton"
+              <button id="startButton"
                 class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">スタート</button>
-                <button id="stopButton"
+              <button id="stopButton"
                 class="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">ストップ</button>
             </div>
-        </div>
+          </div>
+          <!-- コメント部分 -->
           <div class="bg-cyan-50 text-center lg:w-2/3 w-full rounded-lg">
-            <h1 class="title-font sm:text-4xl text-3xl my-4 font-medium text-gray-900">ナースのお仕事　スロットゲーム</h1>
-            <p class="mb-8 leading-relaxed">『ナースのお仕事』は、1996-2002年に放送された医療コメディドラマ。<br>主人公と指導役の先輩ナースの掛け合いが人気。</p>
-            <p class="mb-8 leading-relaxed">今回スロットに登場しているのは左から主人公の朝倉、指導役ナースの尾崎、完璧主義な先輩大島。<br>主人公はいつも信じられないような行動を取るため、先輩から怒られることが多々ある。<br>嵐を呼ぶ看護師は実際の現場にもいるが、ここまでの人物がいたとしたらかなりヤバイと思う。</p>
+            <p class="my-8 leading-relaxed">『ナースのお仕事』は、1996-2002年に放送された医療コメディドラマ。<br>主人公と指導役の先輩ナースの掛け合いが人気。</p>
+            <p class="mb-8 leading-relaxed">
+              今回スロットに登場しているのは左から主人公の朝倉、指導役ナースの尾崎、完璧主義な先輩大島。<br>主人公はいつも信じられないような行動を取るため、先輩から怒られることが多々ある。<br>嵐を呼ぶ看護師は実際の現場にもいるが、ここまでの人物がいたとしたらかなりヤバイと思う。
+            </p>
           </div>
         </div>
       </section>
-  </main>
-  <!-- フッター -->
-  <footer class="text-gray-600 body-font">
-    <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
-      <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">© 2024
-        なっちゃん —
-        <a href="https://twitter.com/_723kb" class="text-gray-600 hover:text-gray-900 ml-1" rel="noopener noreferrer"
-          target="_blank">@＿723kb</a>
-      </p>
-      <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
-        <a class="text-gray-500">
-          <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5"
-            viewBox="0 0 24 24">
-            <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
-          </svg>
-        </a>
-        <a class="ml-3 text-gray-500">
-          <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5"
-            viewBox="0 0 24 24">
-            <path
-              d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z">
-            </path>
-          </svg>
-        </a>
-        <a class="ml-3 text-gray-500">
-          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-            class="w-5 h-5" viewBox="0 0 24 24">
-            <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
-            <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
-          </svg>
-        </a>
-        <a class="ml-3 text-gray-500">
-          <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"
-            class="w-5 h-5" viewBox="0 0 24 24">
-            <path stroke="none"
-              d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
-            <circle cx="4" cy="4" r="2" stroke="none"></circle>
-          </svg>
-        </a>
-      </span>
-    </div>
-  </footer>
-  <!-- 以下JavaScript読み込み -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-  <script src="./js/slot.js"></script>
+    </main>
+    <!-- フッター -->
+    <footer class="text-gray-600 body-font">
+      <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+        <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">© 2024
+          なっちゃん —
+          <a href="https://twitter.com/_723kb" class="text-gray-600 hover:text-gray-900 ml-1" rel="noopener noreferrer"
+            target="_blank">@＿723kb</a>
+        </p>
+        <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+          <a class="text-gray-500">
+            <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5"
+              viewBox="0 0 24 24">
+              <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+            </svg>
+          </a>
+          <a class="ml-3 text-gray-500">
+            <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5"
+              viewBox="0 0 24 24">
+              <path
+                d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z">
+              </path>
+            </svg>
+          </a>
+          <a class="ml-3 text-gray-500">
+            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              class="w-5 h-5" viewBox="0 0 24 24">
+              <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+            </svg>
+          </a>
+          <a class="ml-3 text-gray-500">
+            <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+              stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
+              <path stroke="none"
+                d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+              <circle cx="4" cy="4" r="2" stroke="none"></circle>
+            </svg>
+          </a>
+        </span>
+      </div>
+    </footer>
+    <!-- 以下JavaScript読み込み -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="./js/slot.js"></script>
 </body>
 
 </html>
