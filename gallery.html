@@ -16,12 +16,10 @@
         <img src="img/mv.jpg" alt="">
       </a>
       <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
-        <a class="mr-5 hover:text-gray-900">First Link</a>
-        <a class="mr-5 hover:text-gray-900">Second Link</a>
-        <a class="mr-5 hover:text-gray-900">Third Link</a>
-        <a class="mr-5 hover:text-gray-900">Fourth Link</a>
+        <a class="mr-5 hover:text-gray-900" href="index.html">ホーム</a>
+        <a class="mr-5 hover:text-gray-900" href="gallery.html">図鑑</a>
       </nav>
-      <button class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">Button
+      <button id="linkBtn" class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">？？？
         <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
           <path d="M5 12h14M12 5l7 7-7 7"></path>
         </svg>
@@ -29,12 +27,12 @@
     </div>
   </header>
       <!-- メイン -->
-  <main class="min-h-[45vh] bg-[url('img/bg03.jpg')]  bg-center bg-cover">
+  <main class="min-h-[45vh] bg-[url('img/bg04.jpg')]  bg-center bg-cover">
     <section class="text-gray-600 body-font">
       <div class="container px-5 pt-24 pb-40 mx-auto">
         <div class="flex flex-col text-center w-full mb-20">
           <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">ナースのお仕事図鑑</h1>
-          <p class="lg:w-2/3 mx-auto leading-relaxed text-base">各診療科の特徴や必要なスキルを図鑑にしました。</p>
+          <p class="lg:w-2/3 mx-auto leading-relaxed text-base">各診療科の特徴や必要なスキルを図鑑にしました。<br>写真にカーソルを合わせるかタップすると詳細を読むことができます。</p>
         </div>
         <!-- No1 内科 -->
         <div class="flex flex-wrap -m-4">
@@ -170,11 +168,9 @@
     <!-- フッター -->
   <footer class="text-gray-600 body-font">
     <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
-      <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
-  <img src="img/mv.jpg" alt="">
-      </a>
+
       <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">© 2024 なっちゃん —
-        <a href="https://twitter.com/_723kb" class="text-gray-600 ml-1" rel="noopener noreferrer" target="_blank">@＿723kb</a>
+        <a href="https://twitter.com/_723kb" class="text-gray-600 hover:text-gray-900 ml-1" rel="noopener noreferrer" target="_blank">@＿723kb</a>
       </p>
       <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
         <a class="text-gray-500">
@@ -202,6 +198,9 @@
       </span>
     </div>
   </footer>
+    <!-- 以下JavaScript読み込み -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="./js/gallery.js"></script>
 </body>
 <!-- <a href="https://jp.freepik.com/free-photo/top-view-world-heart-day-with-copy-space_9241777.htm#fromView=search&page=2&position=40&uuid=e16da2f2-8752-4b59-ba6b-5e2683608919">著作者：freepik</a> -->
 </html>

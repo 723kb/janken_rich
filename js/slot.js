@@ -29,10 +29,10 @@ $(document).ready(function () {
     if (x === y && y === z) {
       let slotResult;
       if (x === 1) {
-        slotResult = "せんぱ〜い";
+        slotResult = "せ〜んぱ〜い！";
         playSound('audio/music01.mp3'); // 条件1が満たされた場合に音楽01を再生
       } else if (x === 2) {
-        slotResult = "あ〜さ〜く〜ら〜";
+        slotResult = "あ〜さ〜く〜ら〜！";
         playSound('audio/music02.mp3'); // 条件2が満たされた場合に音楽02を再生
       } else if (x === 3) {
         slotResult = "ちょっと朝倉さんっ！"; playSound('audio/music03.mp3'); // 条件3が満たされた場合に音楽03を再生
