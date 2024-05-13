@@ -21,8 +21,10 @@
           <a class="mr-5 hover:text-gray-900">Third Link</a>
           <a class="mr-5 hover:text-gray-900">Fourth Link</a>
         </nav>
-        <button class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">Button
-          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
+        <button
+          class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">Button
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            class="w-4 h-4 ml-1" viewBox="0 0 24 24">
             <path d="M5 12h14M12 5l7 7-7 7"></path>
           </svg>
         </button>
@@ -39,24 +41,25 @@
         <div id="q_01" class="fit flex flex-col justify-center items-center">
           <p class="text-3xl font-bold">質問1: あなたの性格は？　</p>
           <ul>
+            <!-- aの答えは内科  -->
             <li
               class="w-96 h-16 my-8 flex items-center justify-center text-2xl text-white text-center rounded-lg  bg-blue-500 hover:bg-blue-200 hover:text-black  cursor-pointer">
               <a class="
           btn" href="#q_02" data-value="a">穏やか</a>
             </li>
-            <!-- 内科  -->
+            <!-- bの答えは外科  -->
             <li
               class="w-96 h-16 my-8 flex items-center justify-center text-2xl text-white text-center rounded-lg bg-blue-500 hover:bg-blue-200 hover:text-black cursor-pointer">
               <a class="btn" href="#q_02" data-value="b">社交的</a>
-            </li> <!-- 外科  -->
+            </li>
+            <!-- cの答えは救急  -->
             <li
               class="w-96 h-16 my-8 flex items-center justify-center text-2xl text-white text-center rounded-lg bg-blue-500 hover:bg-blue-200 hover:text-black cursor-pointer">
               <a class="
           btn" href="#q_02" data-value="c">冷静</a>
-            </li> <!-- 救急  -->
+            </li>
           </ul>
         </div>
-
         <!-- 質問2 -->
         <div id="q_02" class=" flex flex-col justify-center items-center" style="display: none;">
           <p class="text-3xl font-bold">質問2:　あなたは普段、相手との会話で</p>
@@ -75,7 +78,6 @@
             </li>
           </ul>
         </div>
-
         <!-- 質問3 -->
         <div id="q_03" class=" flex flex-col justify-center items-center" style="display: none;">
           <p class="text-3xl font-bold">質問3:　ストレスが溜まった時、あなたは</p>
@@ -94,7 +96,6 @@
             </li>
           </ul>
         </div>
-
         <!-- 質問4 -->
         <div id="q_04" class=" flex flex-col justify-center items-center" style="display: none;">
           <p class="text-3xl font-bold">質問4:　新しい状況や技術に対して、あなたは</p>
@@ -113,7 +114,6 @@
             </li>
           </ul>
         </div>
-
         <!-- 質問5 -->
         <div id="q_05" class=" flex flex-col justify-center items-center" style="display: none;">
           <p class="text-3xl font-bold">質問5:　チームでのあなたの役割は</p>
@@ -132,9 +132,6 @@
             </li>
           </ul>
         </div>
-
-
-
         <!-- ここから以下回答 -->
         <!-- 回答の答え1 -->
         <div id="answer_01" class="result text-gray-600 body-font" style="display: none;">
@@ -154,10 +151,6 @@
             </div>
           </div>
         </div>
-
-
-
-
         <!-- 回答の答え2 -->
         <div id="answer_02" class="result text-gray-600 body-font" style="display: none;">
           <div class="container mx-auto flex px-5 py-5 items-center justify-center flex-col">
@@ -176,9 +169,6 @@
             </div>
           </div>
         </div>
-
-
-
         <!-- 回答の答え3 -->
         <div id="answer_03" class="result text-gray-600 body-font" style="display: none;">
           <div class="container mx-auto flex px-5 py-5 items-center justify-center flex-col">
@@ -208,16 +198,60 @@
             <div class="py-6 text-center">
               <p class="mb-8 text-2xl font-semibold leading-none tracking-tighter text-neutral-600">
                 他にもどんな診療科があるか<br><br>みてみませんか？</p>
-              <p class="mt-1 text-lg text-gray-500"><a class="w-50 bg-pink-400 text-white hover:bg-pink-100 hover:text-black rounded" href="gallery.html">診療科別看護師図鑑をチェック</a></p>
+              <p class="mt-1 text-lg text-gray-500"><a
+                  class="w-50 bg-pink-400 text-white hover:bg-pink-100 hover:text-black rounded"
+                  href="gallery.html">診療科別看護師図鑑をチェック</a></p>
             </div>
           </div>
         </div>
       </div>
   </div>
   </main>
-
-
-
+  <!-- フッター -->
+  <footer class="text-gray-600 body-font">
+    <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+      <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+        <img src="img/mv.jpg" alt="">
+      </a>
+      <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">© 2024
+        なっちゃん —
+        <a href="https://twitter.com/_723kb" class="text-gray-600 ml-1" rel="noopener noreferrer"
+          target="_blank">@＿723kb</a>
+      </p>
+      <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+        <a class="text-gray-500">
+          <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5"
+            viewBox="0 0 24 24">
+            <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+          </svg>
+        </a>
+        <a class="ml-3 text-gray-500">
+          <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5"
+            viewBox="0 0 24 24">
+            <path
+              d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z">
+            </path>
+          </svg>
+        </a>
+        <a class="ml-3 text-gray-500">
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            class="w-5 h-5" viewBox="0 0 24 24">
+            <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+          </svg>
+        </a>
+        <a class="ml-3 text-gray-500">
+          <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"
+            class="w-5 h-5" viewBox="0 0 24 24">
+            <path stroke="none"
+              d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+            <circle cx="4" cy="4" r="2" stroke="none"></circle>
+          </svg>
+        </a>
+      </span>
+    </div>
+  </footer>
+  <!-- 以下JavaScript読み込み -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script src="./js/main.js"></script>
 </body>
