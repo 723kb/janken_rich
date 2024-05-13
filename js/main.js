@@ -56,7 +56,15 @@ $('.end').on('click', function() {
   }, 5000); // 5000ミリ秒 = 5秒後に表示
 });
 
+  // ？？？ボタンがクリックされた時の処理
+  $('#linkBtn').on('click', function() {
+    window.location.href = 'slot.html'; // slotページへリダイレクト
+  });
 
+// ページをリロード
 $(".return").on('click', function() {
-  location.reload(); // ページをリロード
+  location.reload(); 
 });
+
+
+
