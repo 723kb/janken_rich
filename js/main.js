@@ -95,9 +95,49 @@ $(".return").on("click", function () {
   location.reload();
 });
 
+// 以下シェア機能追加したが未完成
 
+// 回答1のシェアURLを生成
+const shareUrlAnswer1 = location.href + '#answer_01';
+// TwitterシェアURL
+const twitterShareUrl = "https://twitter.com/share?url=" + encodeURIComponent(shareUrlAnswer1) + "&text=" + encodeURIComponent("私におすすめの診療科は内科です！");
+// LINEシェアURL
+const lineShareUrl = "https://social-plugins.line.me/lineit/share?url=" + encodeURIComponent(shareUrlAnswer1);
 
+// TwitterシェアボタンにURLを設定
+document.getElementById("js-share-twitter").setAttribute("href", twitterShareUrl);
+// LINEシェアボタンにURLを設定
+document.getElementById("js-share-line").setAttribute("href", lineShareUrl);
 
+$(document).ready(function() {
+  // BootstrapのJavaScriptを初期化
+  $('.modal').modal();
+});
 
+// スクリーンショットを取得してモーダルを表示する関数
+function captureAndShare() {
+  // 診断結果の要素を取得
+  var resultElement = document.getElementById("answer_01");
 
+  // html2canvasを使ってスクリーンショットを取得
+  html2canvas(resultElement).then(function(canvas) {
+      // canvas要素を画像として取得
+      var resultImage = canvas.toDataURL("image/png");
 
+      // 取得した画像をシェア用のリンクとして設定
+      document.getElementById("shareImage").src = resultImage;
+
+      // シェア用のモーダルを表示
+      $('#shareModal').modal('show');
+  });
+}
+
+// モーダルを表示する関数
+function openModal() {
+  $('#shareModal').modal('show');
+}
+
+// モーダルを閉じる関数
+function closeModal() {
+  $('#shareModal').modal('hide');
+}

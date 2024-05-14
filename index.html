@@ -163,7 +163,32 @@
               </p>
               <button
                 class="return w-56 h-14 m-4 bg-blue-400 text-white hover:bg-blue-200 hover:text-black rounded-full">もういちど</button>
+              <!-- twitter -->
+              <a id="js-share-twitter" class="w-56 h-14 m-4 bg-sky-400 text-white hover:opacity-70 rounded" href="" target="_blank"
+                rel="nofollow noopener noreferrer">Twitterで共有する</a>
+              <!-- line -->
+              <a id="js-share-line" class="w-56 h-14 m-4 bg-green-500 text-white hover:opacity-70  rounded" href="" target="_blank"
+                rel="nofollow noopener noreferrer">LINEで送る</a>
             </div>
+            <!-- シェア機能部分 未完成 -->
+            <!-- モーダルのマークアップ -->
+<div id="shareModal" class="fixed inset-0 overflow-y-auto hidden">
+  <div class="flex items-center justify-center min-h-screen">
+    <div class="fixed inset-0 bg-black opacity-50"></div>
+    <div class="relative bg-white rounded-lg p-8">
+      <!-- モーダルの内容 -->
+      <h2 class="text-2xl font-bold mb-4">診断結果をシェアする</h2>
+      <img id="shareImage" src="" alt="診断結果" class="mb-4">
+      <button class="bg-blue-500 text-white px-4 py-2 rounded" onclick="closeModal()">閉じる</button>
+    </div>
+  </div>
+</div>
+
+<!-- モーダルを表示するボタン -->
+<button class="bg-blue-500 text-white px-4 py-2 rounded" onclick="openModal()">診断結果をシェアする</button>
+
+
+<!-- ここまで未完成 -->
           </div>
         </div>
         <!-- 回答の答え2 bが1番多いと外科 -->
@@ -205,8 +230,7 @@
       </div>
       <!-- モーダルコンテンツ -->
       <div id="modal"
-        class="inline-block p-5 overflow-hidden text-left align-bottom transition-all transform bg-white rounded-lg shadow-2xl lg:p-16 sm:my-8 sm:align-middle sm:max-w-xl sm:w-full hidden"
-        >
+        class="inline-block p-5 overflow-hidden text-left align-bottom transition-all transform bg-white rounded-lg shadow-2xl lg:p-16 sm:my-8 sm:align-middle sm:max-w-xl sm:w-full hidden">
         <!-- モーダルの内容 -->
         <div id="modal-content">
           <div class="mt-3 text-left sm:mt-5">
@@ -263,9 +287,14 @@
       </div>
     </footer>
   </div>
-  <!-- 以下JavaScript読み込み -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-  <script src="./js/main.js"></script>
+<!-- html2canvas の CDN を読み込む -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+<!-- jQuery の CDN を読み込む -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<!-- main.js を読み込む -->
+<script src="./js/main.js"></script>
+</body>
+
 </body>
 
 </html>

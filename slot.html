@@ -4,74 +4,94 @@
 <head>
   <title>slot</title>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
+
 <body class="max-w-[1200px] mx-auto">
-  <div>
     <!-- ヘッダー -->
-    <header class="text-gray-600 body-font">
-      <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-        <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
-          <img src="img/mv.jpg" alt="">
-        </a>
-        <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
-          <a id="home" class="mr-5 hover:text-gray-900" href="index.html#mainPage">ホーム</a>
-          <!-- 最初のスタートぺーじなってしまう -->
-          <a class="mr-5 hover:text-gray-900" href="gallery.html">図鑑</a>
-        </nav>
-        <button
-          class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">？？？
-          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-            class="w-4 h-4 ml-1" viewBox="0 0 24 24">
-            <path d="M5 12h14M12 5l7 7-7 7"></path>
-          </svg>
-        </button>
-      </div>
-    </header>
-    <div class="bg-cyan-50 flex justify-center items-center h-32 mx-auto">
-      <img src="https://github.com/723kb/kadai02_janken_rich/blob/main/img/logo.png?raw=true" alt="ロゴ1" class="pr-8">
-      <h1 class="text-4xl text-center">おあそびのページ</h1>
-      <img src="https://github.com/723kb/kadai02_janken_rich/blob/main/img/logo02.png?raw=true" alt="ロゴ2" class="pl-8">
+  <header class="text-gray-600 body-font">
+  <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+    <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+      <img src="img/mv.jpg" alt="">
+    </a>
+    <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+      <a id="home" class="mr-5 hover:text-gray-900" href="#mainPage">ホーム</a>
+      <a class="mr-5 hover:text-gray-900" href="gallery.html">図鑑</a>
+    </nav>
+    <button id="linkBtn"
+      class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">？？？
+      <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        class="w-4 h-4 ml-1" viewBox="0 0 24 24">
+        <path d="M5 12h14M12 5l7 7-7 7"></path>
+      </svg>
+    </button>
+  </div>
+</header>
+
+    <!-- 見出し -->
+    <div class="bg-cyan-50 flex flex-col md:flex-row justify-center items-center h-auto md:h-32 mx-auto p-4">
+      <img src="https://github.com/723kb/kadai02_janken_rich/blob/main/img/logo.png?raw=true" alt="ロゴ1" class="pr-0 md:pr-8 mb-4 md:mb-0">
+      <h1 class="text-2xl md:text-4xl text-center">おあそびのページ</h1>
+      <img src="https://github.com/723kb/kadai02_janken_rich/blob/main/img/logo02.png?raw=true" alt="ロゴ2" class="pl-0 md:pl-8 mt-4 md:mt-0">
     </div>
+    
     <!-- メイン -->
     <main class="min-h-[45vh] bg-[url('img/bg02.jpg')]  bg-center bg-cover">
       <section class="text-gray-600 body-font">
-        <div class="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
-          <h1 class="title-font sm:text-4xl text-3xl mb-8 font-medium text-gray-900">ナースのお仕事　スロットゲーム</h1>
-          <p class="text-center title-font sm:text-2xl text-xl mb-4 font-medium text-gray-900">絵柄が揃うと音声が流れます。<br>音量に注意してください。</p>
-          <div class="container mx-auto p-8" style="width: 1200px;">
-            <!-- スロット部分 -->
-            <table class="border-collapse border-4 border-black mx-auto mb-8">
-              <tr>
-                <td class="w-48 h-48 border border-black text-center">
-                  <img id="left" src="./img/slot01.jpg" class="mx-auto" border="0">
-                </td>
-                <td class="w-48 h-48 border border-black text-center">
-                  <img id="center" src="./img/slot02.jpg" class="mx-auto" border="0">
-                </td>
-                <td class="w-48 h-48 border border-black text-center">
-                  <img id="right" src="./img/slot03.jpg" class="mx-auto" border="0">
-                </td>
-              </tr>
-            </table>
-            <!-- 結果表示部分 -->
-            <div id="slotResult" class="text-center text-4xl font-bold mb-8"></div>
-            <div class="flex justify-center">
-              <button id="startButton"
-                class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">スタート</button>
-              <button id="stopButton"
-                class="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">ストップ</button>
+        <div class="container mx-auto flex px-5  py-10 sm:py-16 items-center justify-center flex-col">
+          <h1 class="title-font hidden md:block md:text-4xl  mb-8 font-medium text-gray-900">ナースのお仕事　スロットゲーム</h1>
+          <h1 class="title-font md:hidden text-2xl mb-8 font-medium text-gray-900">
+            ナースのお仕事<br class="md:hidden"> <!-- スマホサイズでのみ改行 -->
+            <span class="md:hidden block mb-2"></span> <!-- スマホサイズでのみマージン -->
+            スロットゲーム
+        </h1>
+        
+          <p class="text-center title-font sm:text-2xl text-xl mb-4 font-medium text-gray-900">
+              絵柄が揃うと音声が流れます。<br>音量に注意してください。</p>
+      </div>
+      
+        
+          <div class="container mx-auto">
+            <div class="container mx-auto pb-8 px-8" >
+              <!-- スロット部分 -->
+              <table class="border-collapse border-4 border-black mx-auto mb-8 w-full md:w-auto">
+                <tr>
+                  <td class="w-24 h-24 md:w-48 md:h-48 border border-black text-center">
+                    <img id="left" src="./img/slot01.jpg" class="mx-auto" border="0">
+                  </td>
+                  <td class="w-24 h-24 md:w-48 md:h-48 border border-black text-center">
+                    <img id="center" src="./img/slot02.jpg" class="mx-auto" border="0">
+                  </td>
+                  <td class="w-24 h-24 md:w-48 md:h-48 border border-black text-center">
+                    <img id="right" src="./img/slot03.jpg" class="mx-auto" border="0">
+                  </td>
+                </tr>
+              </table>
             </div>
+            <!-- 結果表示部分 -->
+            <div id="slotResult" class="text-center text-4xl font-bold mb-8">
+              <div class="flex justify-center">
+                <button id="startButton"
+                  class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">スタート</button>
+                <button id="stopButton"
+                  class="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">ストップ</button>
+              </div>
+            </div>
+            <div class="container mx-auto py-8">
+              <div class="bg-cyan-50 rounded-lg text-center px-6 py-8 md:px-12 lg:px-24 max-w-screen-lg mx-auto">
+                <p class="my-4 md:my-8 leading-relaxed">
+                  『ナースのお仕事』は、1996-2002年に放送された医療コメディドラマ。<br class="hidden md:inline">主人公と指導役の先輩ナースの掛け合いが人気。
+                </p>
+                <p class="mb-4 md:mb-8 leading-relaxed">
+                  スロットの左から順に主人公の朝倉、指導役ナースの尾崎、完璧主義者な先輩大島。<br class="hidden md:inline">主人公はかなりぶっとんでいる。ドラマとは違った次元だが、<br class="hidden md:inline">実際に嵐を呼ぶ看護師は存在する。
+                </p>
+              </div>
+            </div>
+            
+            
           </div>
-          <!-- コメント部分 -->
-          <div class="bg-cyan-50 text-center lg:w-2/3 w-full rounded-lg">
-            <p class="my-8 leading-relaxed">『ナースのお仕事』は、1996-2002年に放送された医療コメディドラマ。<br>主人公と指導役の先輩ナースの掛け合いが人気。</p>
-            <p class="mb-8 leading-relaxed">
-              今回スロットに登場しているのは左から主人公の朝倉、指導役ナースの尾崎、完璧主義な先輩大島。<br>主人公はいつも信じられないような行動を取るため、先輩から怒られることが多々ある。<br>嵐を呼ぶ看護師は実際の現場にもいるが、ここまでの人物がいたとしたらかなりヤバイと思う。
-            </p>
-          </div>
-        </div>
       </section>
     </main>
     <!-- フッター -->
