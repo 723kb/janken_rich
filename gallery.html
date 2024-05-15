@@ -6,6 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ナースのお仕事図鑑</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- ファビコン -->
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+  <!-- アイコン -->
+  <link rel="apple-touch-icon" href="img/apple-touch-icon-180x180.png" sizes="180x180">
 </head>
 
 <body class="max-w-[1200px] mx-auto">
@@ -16,17 +20,16 @@
         <img src="img/mv.jpg" alt="">
       </a>
       <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
-        <a class="mr-5 hover:text-gray-900" href="index.html#mainPage">ホーム</a>
-        <!-- index.htmlの#startPageが表示される -->
+        <a id="home" class="mr-5 hover:text-gray-900" href="#mainPage">ホーム</a>
         <a class="mr-5 hover:text-gray-900" href="gallery.html">図鑑</a>
+        <button id="linkBtn"
+          class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-0">？？？
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            class="w-4 h-4 ml-1" viewBox="0 0 24 24">
+            <path d="M5 12h14M12 5l7 7-7 7"></path>
+          </svg>
+        </button>
       </nav>
-      <button id="linkBtn"
-        class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">？？？
-        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-          class="w-4 h-4 ml-1" viewBox="0 0 24 24">
-          <path d="M5 12h14M12 5l7 7-7 7"></path>
-        </svg>
-      </button>
     </div>
   </header>
   <!-- メイン -->
@@ -36,7 +39,7 @@
         <div class="flex flex-col text-center w-full mb-20">
           <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">ナースのお仕事図鑑</h1>
           <p class="lg:w-2/3 mx-auto leading-relaxed text-base">
-            各診療科の特徴や必要なスキルを図鑑にしました。<br>写真にカーソルを合わせると詳細を読むことができます。<br>PC以外の場合は写真を長押ししてください。</p>
+            各診療科の特徴や必要なスキルを図鑑にしました。<br>写真にカーソルを合わせると<br class="sm:hidden">詳細を読むことができます。<br>PC以外の場合は写真を長押ししてください。</p>
         </div>
         <!-- No1 内科 -->
         <div class="flex flex-wrap -m-4">
@@ -172,7 +175,6 @@
   <!-- フッター -->
   <footer class="text-gray-600 body-font">
     <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
-
       <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">© 2024
         なっちゃん —
         <a href="https://twitter.com/_723kb" class="text-gray-600 hover:text-gray-900 ml-1" rel="noopener noreferrer"

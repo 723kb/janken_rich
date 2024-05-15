@@ -5,6 +5,10 @@
   <title>ナースのお仕事</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- ファビコン -->
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+  <!-- アイコン -->
+  <link rel="apple-touch-icon" href="img/apple-touch-icon-180x180.png" sizes="180x180">
 </head>
 
 <body class="max-w-[1200px] mx-auto">
@@ -13,11 +17,12 @@
     class="flex flex-col justify-center items-center min-h-[45vh] h-screen bg-[url('img/bg03.jpg')]  bg-center bg-cover">
     <h1 class="text-3xl text-slate-700 mb-28">もしあなたが看護師なら…</h1>
     <h1 class="text-4xl font-bold text-orange-600 mb-20">診療科診断 for Nurse</h1>
-    <h3 class="text-2xl text-slate-700 mb-20">5つの質問に答えて
-      どの診療科がむいているか診断してみよう！</h3>
+    <h3 class="text-2xl text-slate-700 mb-20 text-center sm:p-4">
+      5つの質問に答えて<br class="md:hidden">どの診療科がむいているか<br class="sm:hidden">診断してみよう！
+    </h3>
     <button id="openBtn"
       class="text-white text-4xl w-80 h-28 bg-orange-600 animate-pulse hover:bg-orange-200 hover:text-black rounded-full mb-20">診断START
-      </bt>
+    </button>
   </div>
   <!-- ボタンを押すとこっちが表示 -->
   <div id="mainPage" class="hidden">
@@ -31,14 +36,14 @@
           <a id="home" class="mr-5 hover:text-gray-900" href="#mainPage">ホーム</a>
           <!-- mainPageに飛ぶが回答途中に押すと質問が重複して表示される -->
           <a class="mr-5 hover:text-gray-900" href="gallery.html">図鑑</a>
+          <button id="linkBtn"
+            class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-0">？？？
+            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              class="w-4 h-4 ml-1" viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7"></path>
+            </svg>
+          </button>
         </nav>
-        <button id="linkBtn"
-          class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">？？？
-          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-            class="w-4 h-4 ml-1" viewBox="0 0 24 24">
-            <path d="M5 12h14M12 5l7 7-7 7"></path>
-          </svg>
-        </button>
       </div>
     </header>
     <!-- メイン -->
@@ -73,7 +78,7 @@
         <!-- 本当はhiddenと書きたかったがそうすると要素が左寄せになってしまうので断念 以下同様 -->
         <div id="q_02" class="flex flex-col justify-center items-center" style="display: none;">
           <p class="text-3xl font-bold text-center w-60 bg-orange-300 rounded-full mb-8">Q 2</p>
-          <p class="text-3xl font-bold">あなたは普段、相手との会話で</p>
+          <p class="text-3xl font-bold text-center">あなたは普段、<br class="sm:hidden">相手との会話で</p>
           <ul>
             <li
               class="w-96 h-16 my-8 flex items-center justify-center text-2xl text-white text-center rounded-lg bg-blue-400 hover:bg-blue-200 hover:text-black cursor-pointer">
@@ -92,7 +97,7 @@
         <!-- 質問3 -->
         <div id="q_03" class=" flex flex-col justify-center items-center" style="display: none;">
           <p class="text-3xl font-bold text-center w-60 bg-orange-300 rounded-full mb-8">Q 3</p>
-          <p class="text-3xl font-bold">ストレスが溜まった時、あなたは</p>
+          <p class="text-3xl font-bold text-center">ストレスが溜まった時、<br class="sm:hidden">あなたは</p>
           <ul>
             <li
               class="w-96 h-16 my-8 flex items-center justify-center text-2xl text-white text-center rounded-lg bg-blue-400 hover:bg-blue-200 hover:text-black cursor-pointer">
@@ -111,7 +116,7 @@
         <!-- 質問4 -->
         <div id="q_04" class=" flex flex-col justify-center items-center" style="display: none;">
           <p class="text-3xl font-bold text-center w-60 bg-orange-300 rounded-full mb-8">Q 4</p>
-          <p class="text-3xl font-bold">新しい状況や技術に対して、あなたは</p>
+          <p class="text-3xl font-bold text-center">新しい状況や技術に対して、<br class="sm:hidden">あなたは</p>
           <ul>
             <li
               class="w-96 h-16 my-8 flex items-center justify-center text-2xl text-white text-center rounded-lg bg-blue-400 hover:bg-blue-200 hover:text-black cursor-pointer">
@@ -151,22 +156,25 @@
         <!-- ここはhiddenでも中央配置 なぜ -->
         <div id="answer_01" class="result text-gray-600 body-font hidden">
           <div class="container mx-auto flex px-5 py-5 items-center justify-center flex-col">
-            <h1 class="title-font sm:text-4xl text-3xl pb-20 font-medium text-gray-900">あなたにむいている診療科は</h1>
+            <h1
+              class="title-font sm:text-4xl text-3xl text-center py-4 m-4 font-medium text-gray-900 bg-white bg-opacity-75 rounded">
+              あなたにむいている<br class="sm:hidden">診療科は</h1>
             <img class="lg:w-2/6 md:w-3/6 w-5/6 mb-10 object-cover object-center rounded" alt="内科看護師"
               src="img/result01.jpg">
             <div class="text-center lg:w-2/3 w-full">
               <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">内科</h1>
-              <h1 class="title-font sm:text-3xl text-2xl mb-8 font-medium text-gray-900">その人らしさに寄り添うエキスパート</h1>
-              <p class="bg-white mb-4 leading-relaxed rounded-lg">
+              <h1 class="title-font sm:text-3xl text-2xl mb-8 font-medium text-gray-900">その人らしさに寄り添う<br
+                  class="sm:hidden">エキスパート</h1>
+              <p class="bg-white bg-opacity-75 mb-4 leading-relaxed rounded-lg">
                 内科では主に薬物治療の介助や日常生活援助、セルフコントロール支援を行います。入院期間が長く、高齢で複数の疾患を持つ患者さんが多いため、コミュニケーション能力やさまざまな疾患と症状の知識が求められます。<span
                   class="font-bold text-rose-500">人とじっくり関わりたいあなたにおすすめです。</span>
               </p>
-
               <button
                 class="return w-56 h-14 m-4 bg-blue-400 text-white hover:bg-blue-200 hover:text-black rounded-full">もういちど</button>
-              <p class="text-xl font-bold text-orange-500 m-4 rounded-lg">＼　結果をシェアしてみませんか？　／</p>
+              <p
+                class="sm:text-xl text-lg font-bold text-orange-500 py-2 m-4 rounded-lg bg-white bg-opacity-75 rounded">
+                ＼　結果をシェアしてみませんか？　／</p>
               <div class="flex flex-row justify-center items-center">
-
                 <!-- SNSシェア→本当はjsで結果を取ってきて表示させたかったができず、htmlに記載した -->
                 <!-- line -->
                 <a class="m-4 hover:opacity-90"
@@ -185,20 +193,23 @@
         <!-- 回答の答え2 bが1番多いと外科 -->
         <div id="answer_02" class="result text-gray-600 body-font hidden">
           <div class="container mx-auto flex px-5 py-5 items-center justify-center flex-col">
-            <h1 class="title-font sm:text-4xl text-3xl pb-20 font-medium text-gray-900">あなたにむいている診療科は</h1>
+            <h1
+              class="title-font sm:text-4xl text-3xl text-center py-4 m-4 font-medium text-gray-900 bg-white bg-opacity-75 rounded">
+              あなたにむいている<br class="sm:hidden">診療科は</h1>
             <img class="lg:w-2/6 md:w-3/6 w-5/6 mb-10 object-cover object-center rounded" alt="外科看護師"
               src="img/result02.jpg">
             <div class="text-center lg:w-2/3 w-full">
               <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">外科</h1>
-              <h1 class="title-font sm:text-3xl text-2xl mb-8 font-medium text-gray-900">マルチタスクをこなすプロ</h1>
-              <p class="bg-white mb-4 leading-relaxed rounded-lg">
+              <h1 class="title-font sm:text-3xl text-2xl mb-8 font-medium text-gray-900">マルチタスクを<br
+                  class="sm:hidden">こなすプロ</h1>
+              <p class="bg-white bg-opacity-75 mb-4 leading-relaxed rounded-lg">
                 外科では、手術前後の看護、治療や処置の介助を行います。急性期の患者さんが多く、病態が急速に変化するため迅速に複数の業務をこなす能力や幅広い専門的知識と看護技術が求められます。<span
                   class="font-bold text-rose-500">幅広い知識と経験を積みたいあなたにおすすめです。</span>
               </p>
-
               <button
                 class="return w-56 h-14 m-4 bg-blue-400 text-white hover:bg-blue-200 hover:text-black rounded-full">もういちど</button>
-              <p class="text-xl font-bold text-orange-500 m-4 rounded-lg">＼　結果をシェアしてみませんか？　／</p>
+              <p class="sm:text-xl text-lg font-bold text-orange-500 py-2 m-4 rounded-lg bg-white bg-opacity-75">
+                ＼　結果をシェアしてみませんか？　／</p>
               <div class="flex flex-row justify-center items-center">
                 <!-- SNSシェア -->
                 <!-- line -->
@@ -218,19 +229,23 @@
         <!-- 回答の答え3 cが1番多いと救急診療科 -->
         <div id="answer_03" class="result text-gray-600 body-font hidden">
           <div class="container mx-auto flex px-5 py-5 items-center justify-center flex-col">
-            <h1 class="title-font sm:text-4xl text-3xl pb-20 font-medium text-gray-900">あなたにむいている診療科は</h1>
+            <h1
+              class="title-font sm:text-4xl text-3xl text-center py-4 m-4 font-medium text-gray-900 bg-white bg-opacity-75 rounded">
+              あなたにむいている<br class="sm:hidden">診療科は</h1>
             <img class="lg:w-2/6 md:w-3/6 w-5/6 mb-10 object-cover object-center rounded" alt="救急科看護師"
               src="img/result03.jpg">
             <div class="text-center lg:w-2/3 w-full">
               <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">救急診療科</h1>
-              <h1 class="title-font sm:text-3xl text-2xl mb-8 font-medium text-gray-900">医療の最前線で命を守る番人</h1>
-              <p class="bg-white mb-4 leading-relaxed rounded-lg">
+              <h1 class="title-font sm:text-3xl text-2xl mb-8 font-medium text-gray-900">医療の最前線で<br
+                  class="sm:hidden">命を守る番人</h1>
+              <p class="bg-white bg-opacity-75 mb-4 leading-relaxed rounded-lg">
                 救急診療科では事故の怪我や急な病気などの緊急性の高い患者さんへの看護を提供します。対象の患者さんは、すべての年齢とすべての疾患・外傷であるため、幅広い知識と高度な看護技術が求められます。<span
                   class="font-bold text-rose-500">向上心が高いあなたにおすすめです。</span>
               </p>
               <button
                 class="return w-56 h-14 m-4 bg-blue-400 text-white hover:bg-blue-200 hover:text-black rounded-full">もういちど</button>
-              <p class="text-xl font-bold text-orange-500 m-4 rounded-lg">＼　結果をシェアしてみませんか？　／</p>
+              <p class="sm:text-xl text-lg font-bold text-orange-500 py-2 m-4 rounded-lg bg-white bg-opacity-75">
+                ＼　結果をシェアしてみませんか？　／</p>
               <div class="flex flex-row justify-center items-center">
                 <!-- SNSシェア -->
                 <!-- line -->
@@ -249,16 +264,19 @@
         </div>
       </div>
       <!-- モーダルコンテンツ -->
-      <div id="modal" class="fixed inset-0 bg-gray-800 bg-opacity-50 z-50 flex justify-center items-center" style="display: none;">
-        <div id="modal-content" class="relative bg-white rounded-lg shadow-2xl p-5 lg:p-16 sm:my-8 sm:max-w-xl sm:w-full">
+      <div id="modal" class="fixed inset-0 bg-gray-800 bg-opacity-50 z-50 flex justify-center items-center"
+        style="display: none;">
+        <div id="modal-content"
+          class="relative bg-white bg-opacity-90 rounded-lg shadow-2xl p-5 lg:p-16 sm:my-8 sm:max-w-xl sm:w-full">
           <!-- 閉じるボタン -->
-          <button id="close-modal" class="absolute top-2 right-2 text-2xl text-gray-600 hover:text-black">&times;</button>
+          <button id="close-modal"
+            class="absolute top-2 right-2 text-2xl text-gray-600 hover:text-black">&times;</button>
           <!-- モーダルの内容 -->
           <div>
-            <p class="mb-8 text-2xl font-semibold text-center leading-none tracking-tighter text-neutral-600">
+            <p class="mx-6 sm:mx-8 text-2xl font-semibold text-center leading-none tracking-tighter text-neutral-600">
               他にもどんな診療科があるか<br><br>みてみませんか？
             </p>
-            <p class="mt-1 text-lg text-center text-gray-500">
+            <p class="mt-3 text-lg text-center text-gray-500">
               <a class="w-56 bg-pink-400 text-white hover:bg-pink-100 hover:text-black rounded" href="gallery.html">
                 図鑑をみてみる
               </a>
@@ -313,8 +331,6 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <!-- main.js を読み込む -->
   <script src="./js/main.js"></script>
-</body>
-
 </body>
 
 </html>
