@@ -39,7 +39,7 @@ html2canvasを使って診断結果のスクリーンショットを載せてシ
 
 [感想]前回よりロジック部分は簡潔に書くことができた（その分選択肢と答えは少ないが）。質問部分をhtmlに記載し、jsでshow/hideさせたがもっとスマートな書き方があるのではないかと思った。
 [参考記事]
-   1. [https://qiita.com/bstyle6130/items/c3dfebdceaaef8e3860d]質問部分の画面遷移を参考にした。
-   2. [https://x.gd/dg2gN]SNSシェア機能。ただこの通りにしてもなぜかうまくいかなかった。
+   1. [https://qiita.com/bstyle6130/items/c3dfebdceaaef8e3860d] 質問部分の画面遷移を参考にした。
+   2. [https://x.gd/dg2gN] SNSシェア機能。ただこの通りにしてもなぜかうまくいかなかった。
    3. [https://tailblocks.cc/#google_vignette][https://wickedblocks.dev/groups/modal/] Tailwind CSSのテンプレートサイト。
 
