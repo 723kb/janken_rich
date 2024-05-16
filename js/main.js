@@ -1,16 +1,32 @@
-//スタートページのボタンを押すとメインページに切り替わる
-$("#openBtn").on("click", function () {
-  $("#startPage").hide();
-  $("#mainPage").fadeIn();
+$(document).ready(function() {
+  // URLからクエリパラメータを取得
+  const urlParams = new URLSearchParams(window.location.search);
+  // クエリパラメータに "fromOtherPage" が含まれている場合
+  if (urlParams.has("fromOtherPage")) {
+    // スタートページを非表示にする
+    $("#startPage").hide();
+    // メインページを表示する
+    $("#mainPage").fadeIn();
+  }
+  
+  // スタートページのボタンを押すとメインページに切り替わる処理を実行
+  $("#openBtn").on("click", function () {
+    $("#startPage").hide();
+    $("#mainPage").fadeIn();
+  });
 });
 
-// 途中でホームを押すと質問が消えない！
+
+// 途中でホームを押すと質問が消えない！→current-questionクラス名を付与して解消
 // ホームに戻るボタンがクリックされた時の処理
 $("#home").on("click", function () {
+  console.log("ホームボタンが押されました")
   // スタートページを非表示にする
   $("#startPage").hide();
   // 全ての質問を非表示にする
   $(".question").hide();
+  // 現在の質問を非表示にする
+  $(".current-question").hide();
   // 最初の質問を表示する
   $("#q_01").show();
   // 結果ページを非表示にする
@@ -80,15 +96,15 @@ $(".end").on("click", function () {
   // 5秒後にモーダルを表示
   setTimeout(function () {
     // モーダルを表示する処理
-     // 5000ミリ秒 = 6秒後に表示
-    $("#modal").fadeIn(); 
+    // 5000ミリ秒 = 6秒後に表示
+    $("#modal").fadeIn();
   }, 6000);
 });
 
-    // モーダルを閉じるボタンのイベントリスナー
-    $("#close-modal").on("click", function(){
-      $("#modal").fadeOut();
-    });
+// モーダルを閉じるボタンのイベントリスナー
+$("#close-modal").on("click", function () {
+  $("#modal").fadeOut();
+});
 
 // ？？？ボタンがクリックされた時の処理
 $("#linkBtn").on("click", function () {

@@ -1,11 +1,7 @@
 // ホームに戻るボタンがクリックされた時の処理
-$("#home").on("click", function (event) {
-  // デフォルトの動作をキャンセル
-  event.preventDefault();
-  // index.htmlのstartPageを非表示にする なぜかならない
-  $("#startPage").hide();
-  // index.htmlのURLに遷移し、#mainPageのセクションにスクロール
-  window.location.href = "index.html#mainPage";
+$("#home").on("click", function () {
+  // 現在の URL に fromOtherPage クエリパラメータを付加して、index.html に遷移
+  window.location.href = 'index.html?fromOtherPage=true';
 });
 
 // ？？？ボタンがクリックされた時の処理
