@@ -24,7 +24,7 @@ function playSound(soundFile) {
 
 // ドキュメントが読み込まれた後に実行されるjQueryコード
 $(document).ready(function () {
-  // スロットのタイマーIDを格納する変数
+  // スロットのタイマーIDを格納する変数→タイマーの設定がないと一度回転した後、停止も回転もしない！
   let tID = 0;
   // 各リールの結果を保持する変数
   let x, y, z;
@@ -40,7 +40,7 @@ $(document).ready(function () {
     $('#left').attr('src', 'img/slot0' + x + '.jpg');
     $('#center').attr('src', 'img/slot0' + y + '.jpg');
     $('#right').attr('src', 'img/slot0' + z + '.jpg');
-    // 一定時間ごとにstartSlot()関数を再帰的に呼び出す
+    // 一定時間ごとにstartSlot()関数を再帰的に呼び出す→これがないと回転しつづけない
     tID = setTimeout(startSlot, 70);
   }
 

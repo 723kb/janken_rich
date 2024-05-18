@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
   // URLからクエリパラメータを取得
   const urlParams = new URLSearchParams(window.location.search);
   // クエリパラメータに "fromOtherPage" が含まれている場合
@@ -8,7 +8,7 @@ $(document).ready(function() {
     // メインページを表示する
     $("#mainPage").fadeIn();
   }
-  
+
   // スタートページのボタンを押すとメインページに切り替わる処理を実行
   $("#openBtn").on("click", function () {
     $("#startPage").hide();
@@ -86,17 +86,27 @@ $(".end").on("click", function () {
   // countAがcountBよりも多いかつ、countAがcountCよりも多い場合は回答1をフェードイン
   if (countA > countB && countA > countC) {
     $("#answer_01").fadeIn("slow");
-  } // countBがcountAよりも多いかつ、countBがcountCよりも多い場合は回答2をフェードイン
-  else if (countB > countA && countB > countC) {
+  } else if (countB > countA && countB > countC) {
+    // countBがcountAよりも多いかつ、countBがcountCよりも多い場合は回答2をフェードイン
     $("#answer_02").fadeIn("slow");
-  } // それ以外つまりcountCが他の2つより多い場合は回答3をフェードイン
-  else {
+  } else if (countC > countA && countC > countB) {
+    // countCがcountAよりも多いかつ、countCがcountBよりも多い場合は回答3をフェードイン
+    $("#answer_03").fadeIn("slow");
+  } else if (countA === countB) {
+    // countAとcountBが同数の場合の処理
+    // countAとcountBが同数ならば回答1を優先的に表示する
+    $("#answer_01").fadeIn("slow");
+  } else if (countB === countC) {
+    // countBとcountCが同数の場合の処理
+    // countBとcountCが同数ならば回答2を優先的に表示する
+    $("#answer_02").fadeIn("slow");
+  } else if (countC === countA) {
+    // countCとcountAが同数の場合の処理
+    // countCとcountAが同数ならば回答3を優先的に表示する
     $("#answer_03").fadeIn("slow");
   }
-  // 5秒後にモーダルを表示
+  // 6秒後にモーダルを表示
   setTimeout(function () {
-    // モーダルを表示する処理
-    // 5000ミリ秒 = 6秒後に表示
     $("#modal").fadeIn();
   }, 6000);
 });
